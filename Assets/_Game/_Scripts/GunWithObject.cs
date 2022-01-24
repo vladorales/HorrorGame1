@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunWithObject : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class GunWithObject : MonoBehaviour
 	public float bulletSpeed = 30f;
 	public float lifeTime = 3;
 
+
 	public float bulletAmmo = 30f;
+	public Text bulletCount;
 
 	public Camera PlayerCam;
 	public ParticleSystem MuzzleFlash;
@@ -22,7 +25,7 @@ public class GunWithObject : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		
+		bulletCount.text = "Ammo: " + bulletAmmo.ToString();
 		GetGunInput();
 	}
 
@@ -39,7 +42,7 @@ public class GunWithObject : MonoBehaviour
 			}
 			else
 			{
-				
+				return;
 			}
 		}
 	}
