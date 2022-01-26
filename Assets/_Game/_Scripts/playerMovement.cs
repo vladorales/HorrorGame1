@@ -18,16 +18,10 @@ public class playerMovement : MonoBehaviour
 	public float groundDistance = 0.4f;
 	public LayerMask groundMask;
 
+	public bool isMoving = true;
+
 	// Update is called once per frame
     void Update()
-	{
-		Input();
-		
-	}
-
-	
-
-	private void Input()
 	{
 		isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
@@ -35,6 +29,22 @@ public class playerMovement : MonoBehaviour
 		{
 			velocity.y = -2f;
 		}
+		if (isMoving == true)
+		{
+			Input();
+		}
+		else if (isMoving == false)
+		{
+			return;
+			//stops movement
+		}
+	}
+
+	
+
+	private void Input()
+	{
+		
 
 		float x = UnityEngine.Input.GetAxis("Horizontal");
 		float z = UnityEngine.Input.GetAxis("Vertical");
