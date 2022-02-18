@@ -20,6 +20,7 @@ public class GunWithObject : MonoBehaviour
 	public ParticleSystem MuzzleFlash;
 	public GameObject BulletPrefab;
 	public Transform bulletSpawn;
+	public GameObject GunAnimation;
 
 	private float nextTimeToFire = 0f;
 	// Update is called once per frame
@@ -37,6 +38,7 @@ public class GunWithObject : MonoBehaviour
 			if (bulletAmmo > 0)
 			{
 				nextTimeToFire = Time.time + 1f / fireRate;
+				GunAnimation.GetComponent<Animator>().Play("Shooting_AC");
 				Shoot();
 				bulletAmmo--;
 			}
@@ -56,6 +58,7 @@ public class GunWithObject : MonoBehaviour
 	void Shoot()
 	{
 		MuzzleFlash.Play();
+		
 		GameObject bullet = Instantiate(BulletPrefab);
 		Physics.IgnoreCollision(bullet.GetComponent<Collider>(),
 			bulletSpawn.parent.GetComponent<Collider>());
