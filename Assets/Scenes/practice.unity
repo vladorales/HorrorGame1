@@ -1038,6 +1038,12 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8044175217124248115, guid: 681fa60065e68ca4183a908d8c59da06,
+        type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: edb0336015dc10f4698478b9b60a5d7b,
+        type: 2}
     - target: {fileID: 8524219945189764141, guid: 681fa60065e68ca4183a908d8c59da06,
         type: 3}
       propertyPath: m_FontData.m_MinSize
@@ -1777,7 +1783,6 @@ GameObject:
   - component: {fileID: 1416759088}
   - component: {fileID: 1416759087}
   - component: {fileID: 1416759086}
-  - component: {fileID: 1416759085}
   m_Layer: 0
   m_Name: Cube (12)
   m_TagString: Untagged
@@ -1785,20 +1790,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1416759085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416759084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 684fa9f2bb4359249a8e9ac04ebaf0b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerObject: {fileID: 0}
-  ammoAmount: 10
 --- !u!65 &1416759086
 BoxCollider:
   m_ObjectHideFlags: 0

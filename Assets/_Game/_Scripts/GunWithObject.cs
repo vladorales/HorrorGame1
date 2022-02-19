@@ -22,7 +22,7 @@ public class GunWithObject : MonoBehaviour
 	public Transform bulletSpawn;
 	public Animator GunAnim;
 
-	public float nextTimeToFire = 0f;
+	private float nextTimeToFire = 0f;
 	// Update is called once per frame
 	void Update()
 	{
