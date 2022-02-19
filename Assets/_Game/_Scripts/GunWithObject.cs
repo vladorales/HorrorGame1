@@ -20,9 +20,9 @@ public class GunWithObject : MonoBehaviour
 	public ParticleSystem MuzzleFlash;
 	public GameObject BulletPrefab;
 	public Transform bulletSpawn;
-	public GameObject GunAnimation;
+	public Animator GunAnim;
 
-	private float nextTimeToFire = 0f;
+	public float nextTimeToFire = 0f;
 	// Update is called once per frame
 	void Update()
 	{
@@ -32,13 +32,14 @@ public class GunWithObject : MonoBehaviour
 
 	private void GetGunInput()
 	{
-		if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
-
+		if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)	
 		{
+			StartCoroutine(GunAnimationWaiting());
+			
 			if (bulletAmmo > 0)
 			{
 				nextTimeToFire = Time.time + 1f / fireRate;
-				GunAnimation.GetComponent<Animator>().Play("Shooting_AC");
+				
 				Shoot();
 				bulletAmmo--;
 			}
@@ -47,6 +48,7 @@ public class GunWithObject : MonoBehaviour
 				return;
 			}
 		}
+		
 	}
 
 	private IEnumerator DestroyBulletAfterTime(GameObject bullet, float delay)
@@ -59,6 +61,8 @@ public class GunWithObject : MonoBehaviour
 	{
 		MuzzleFlash.Play();
 		
+
+
 		GameObject bullet = Instantiate(BulletPrefab);
 		Physics.IgnoreCollision(bullet.GetComponent<Collider>(),
 			bulletSpawn.parent.GetComponent<Collider>());
@@ -71,7 +75,14 @@ public class GunWithObject : MonoBehaviour
 		bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.transform.forward * bulletSpeed, ForceMode.Impulse);
 
 		StartCoroutine(DestroyBulletAfterTime(bullet, lifeTime));
+
 		
+	}
+	 IEnumerator GunAnimationWaiting()
+	{
+		GunAnim.SetBool("isFiring", true);
+		yield return new WaitForSeconds(1f);
+		GunAnim.SetBool("isFiring", false);
 	}
 }
 
