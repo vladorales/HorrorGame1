@@ -15,7 +15,6 @@ public class GunWithObject : MonoBehaviour
 
 	public float bulletAmmo = 30f;
 	public Text bulletCount;
-	public bool bulletsEmpty = false;
 
 	public Camera PlayerCam;
 	public ParticleSystem MuzzleFlash;
@@ -47,12 +46,7 @@ public class GunWithObject : MonoBehaviour
 			else
 			{
 				return;
-				
 			}
-			if(bulletAmmo < 30)
-            {
-				bulletsEmpty = true;
-            }
 		}
 		
 	}
@@ -89,11 +83,6 @@ public class GunWithObject : MonoBehaviour
 		GunAnim.SetBool("isFiring", true);
 		yield return new WaitForSeconds(1f);
 		GunAnim.SetBool("isFiring", false);
-	}
-
-	public void Refill()
-	{
-		bulletAmmo = 30;
 	}
 }
 

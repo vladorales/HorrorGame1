@@ -10,13 +10,11 @@ public class S_BulletBehavior : MonoBehaviour
 	{
 		if (collision.gameObject.tag != "Player")
 		{
-			var joint = gameObject.AddComponent<FixedJoint>();
-			joint.connectedBody = collision.rigidbody;
 			if (collision.gameObject.GetComponent<Rigidbody>() != null)
 			{
 				collision.rigidbody.AddRelativeForce(gameObject.transform.forward, ForceMode.Impulse);
 			}
-			Destroy(gameObject, 3f);
+			Destroy(gameObject);
 
 		}
 	}
