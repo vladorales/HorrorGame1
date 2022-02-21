@@ -27,7 +27,7 @@ public class GunWithObject : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		bulletCount.text = "Ammo: " + bulletAmmo.ToString();
+		bulletCount.text = bulletAmmo.ToString();
 		GetGunInput();
 	}
 
