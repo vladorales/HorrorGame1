@@ -27,7 +27,7 @@ public class GetAmmo : MonoBehaviour
 	{
 		if (other.tag == "Player")
 		{
-			PlayerObject = other.gameObject.transform.GetChild(2).gameObject.transform.GetChild(1).gameObject.transform.GetChild(2).gameObject;
+			
 			PlayerObject.GetComponent<GunWithObject>().bulletAmmo += ammoAmount;
 		}
 		else
