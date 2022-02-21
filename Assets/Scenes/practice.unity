@@ -281,7 +281,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b2b10a78114991143b854717f041918c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1041,7 +1041,7 @@ PrefabInstance:
     - target: {fileID: 8044175217124248115, guid: 681fa60065e68ca4183a908d8c59da06,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8044175217124248115, guid: 681fa60065e68ca4183a908d8c59da06,
         type: 3}
@@ -1056,6 +1056,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 681fa60065e68ca4183a908d8c59da06, type: 3}
+--- !u!1 &539450776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9132800947801318957, guid: 681fa60065e68ca4183a908d8c59da06,
+    type: 3}
+  m_PrefabInstance: {fileID: 415068879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &804630667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1333,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 36d960d7e0cb7674babd2ae30bcefbd2, type: 2}
+  - {fileID: 2100000, guid: 2dcb14d4553fe4d4f8fac3c65210cc31, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1788,13 +1794,28 @@ GameObject:
   - component: {fileID: 1416759088}
   - component: {fileID: 1416759087}
   - component: {fileID: 1416759086}
+  - component: {fileID: 1416759085}
   m_Layer: 0
   m_Name: Cube (12)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1416759085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416759084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 684fa9f2bb4359249a8e9ac04ebaf0b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerObject: {fileID: 539450776}
+  ammoAmount: 10
 --- !u!65 &1416759086
 BoxCollider:
   m_ObjectHideFlags: 0
