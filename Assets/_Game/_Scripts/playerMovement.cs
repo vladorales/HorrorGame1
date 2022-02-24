@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class playerMovement : MonoBehaviour
 {
 	public CharacterController controller;
@@ -10,6 +11,7 @@ public class playerMovement : MonoBehaviour
 	public float speed = 12f;
 	public float gravity = -9.81f;
 	public float jumpHeight = 3f;
+    public float slowTime = 2f;
 
 	Vector3 velocity;
 	bool isGrounded;
@@ -19,6 +21,8 @@ public class playerMovement : MonoBehaviour
 	public LayerMask groundMask;
 
 	public bool isMoving = true;
+
+    public GameObject deathText;
 
 	// Update is called once per frame
     void Update()
@@ -67,5 +71,23 @@ public class playerMovement : MonoBehaviour
 			controller.Move(velocity * Time.deltaTime);
 		}
 	}
+    public void Die()
+    {
+        StartCoroutine(Dying());
+    }
 
+    IEnumerator Dying()
+    {
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Debug.Log("death state works");
+        Time.timeScale = 0.5f;
+        yield return new WaitForSeconds(slowTime);
+        Time.timeScale = 0;
+        deathText.SetActive(true);
+       
+        //audio feedback
+
+    }
 }

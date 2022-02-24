@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class Item : MonoBehaviour
+public class EnemyFollow : MonoBehaviour
 {
-    public Transform pickup;
+    public NavMeshAgent enemy;
+    public Transform Player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,13 +17,6 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void PickedUp()
-    {
-        Debug.Log("pickedup");
-        this.transform.position = pickup.position;
-        this.transform.parent = pickup;
+        enemy.SetDestination(Player.position);   
     }
 }

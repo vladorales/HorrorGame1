@@ -34,7 +34,16 @@ public class Blob : MonoBehaviour
         transform.localScale = new Vector3(x + 0.0001f, y + 0.0001f, z + 0.0001f);
     }
 
-
+     void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("DEATH");
+        if(other.tag == "Player")
+        {
+            playerMovement player
+                = other.gameObject.GetComponent<playerMovement>();
+            player.Die();
+        }
+    }
 
     public void Damaged()
     {
@@ -43,9 +52,9 @@ public class Blob : MonoBehaviour
         float y = this.gameObject.transform.localScale.y;
         float z = this.gameObject.transform.localScale.z;
         //Damaged.Play();
-        transform.localScale = new Vector3(x * 0.09f, y * 0.09f, z * 0.09f);
+        transform.localScale = new Vector3(x * - 0.05f, y * 0.05f, z * 0.05f);
 
-        if (x < 0.9)
+        if (x < 1)
         {
             Destroy(gameObject);
         }
