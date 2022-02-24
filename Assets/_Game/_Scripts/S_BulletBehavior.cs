@@ -10,7 +10,7 @@ public class S_BulletBehavior : MonoBehaviour
 	public void OnCollisionEnter(Collision collision)
 	{
 		spark.Play();
-		if (collision.gameObject.tag != "Player")
+		if (collision.gameObject.tag != "Player" || collision.gameObject.tag != "Blob")
 		{
 			var joint = gameObject.AddComponent<FixedJoint>();
 			joint.connectedBody = collision.rigidbody;
@@ -32,6 +32,7 @@ public class S_BulletBehavior : MonoBehaviour
 
         if (bob != null)
         {
+
             Debug.Log("Blob hit");
             bob.Damaged();
         }

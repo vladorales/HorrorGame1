@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class Item : MonoBehaviour
         
     }
 
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -25,9 +31,9 @@ public class Item : MonoBehaviour
             //  Destroy(gameObject, 1f);
             Debug.Log("transfered");
             Key.transform.parent = Inventory;
-            Key.transform.rotation = Inventory.transform.localRotation;
-            Key.transform.position = Inventory.transform.localPosition;
-         //   Key.SetActive(false);
+            Key.transform.rotation = Inventory.transform.rotation;
+            Key.transform.position = Inventory.transform.position;
+            this.gameObject.SetActive(false);
         }
     }
 

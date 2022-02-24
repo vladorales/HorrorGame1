@@ -15,6 +15,7 @@ public class Blob : MonoBehaviour
     [Header("Other Settings")]
     public Transform player;
     Transform enemyTransform;
+    public GameObject[] Staples;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,16 @@ public class Blob : MonoBehaviour
                 = other.gameObject.GetComponent<playerMovement>();
             player.Die();
         }
+
+        if(other.tag == "bullet")
+        {
+            Staples =
+            GameObject.FindGameObjectsWithTag("bullet");
+            if (Staples[5])
+            {
+                Debug.Log("BLOB DEFEATED");
+            }
+        }
     }
 
     public void Damaged()
@@ -52,7 +63,7 @@ public class Blob : MonoBehaviour
         float y = this.gameObject.transform.localScale.y;
         float z = this.gameObject.transform.localScale.z;
         //Damaged.Play();
-        transform.localScale = new Vector3(x * - 0.05f, y * 0.05f, z * 0.05f);
+        transform.localScale = new Vector3(x - 0.2f, y - 0.2f, z - 0.2f);
 
         if (x < 1)
         {

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 9143780279880970459}
   - component: {fileID: 5281279952774889342}
   - component: {fileID: 7975337739834428340}
+  - component: {fileID: 920532563}
+  - component: {fileID: 920532564}
   m_Layer: 0
   m_Name: LN_AmmoBoxSM
   m_TagString: Untagged
@@ -25,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8479973651263171169}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.437771, y: 2.396, z: 56.352386}
-  m_LocalScale: {x: 23.727388, y: 23.727388, z: 11.687234}
+  m_LocalScale: {x: 148.41956, y: 148.41956, z: 73.10599}
   m_Children:
   - {fileID: 8283414094243061544}
   - {fileID: 8620094189031334708}
@@ -100,6 +102,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &920532563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8479973651263171169}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.009999997, y: 0.014772134, z: 0.014380712}
+  m_Center: {x: 0, y: 0.0023860682, z: -0.0021903554}
+--- !u!114 &920532564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8479973651263171169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 684fa9f2bb4359249a8e9ac04ebaf0b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerObject: {fileID: 0}
+  ammoAmount: 10
 --- !u!1001 &231018055772838427
 PrefabInstance:
   m_ObjectHideFlags: 0
