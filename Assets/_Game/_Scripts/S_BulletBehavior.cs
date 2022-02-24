@@ -21,9 +21,19 @@ public class S_BulletBehavior : MonoBehaviour
 				
 			}
 			Destroy(gameObject, 3f);
-
-		}
+        
+        }
 	}
 
-	
+    public void OnTriggerEnter(Collider other)
+    {
+        Blob bob
+     = other.gameObject.GetComponent<Blob>();
+
+        if (bob != null)
+        {
+            Debug.Log("Blob hit");
+            bob.Damaged();
+        }
+    }
 }

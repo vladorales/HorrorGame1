@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 958599361990824590}
   - component: {fileID: 6106353904431737436}
   - component: {fileID: 6068179659730002889}
-  - component: {fileID: 5014761468136896369}
+  - component: {fileID: -2795427198640559052}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: bullet
@@ -125,7 +125,7 @@ TrailRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -220,7 +220,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &5014761468136896369
+--- !u!114 &-2795427198640559052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5001,6 +5001,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

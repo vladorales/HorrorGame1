@@ -6,7 +6,7 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
 	public CharacterController controller;
-
+    //public GunWithObject gunReload;
 	public float speed = 12f;
 	public float gravity = -9.81f;
 	public float jumpHeight = 3f;
@@ -23,7 +23,9 @@ public class playerMovement : MonoBehaviour
 	// Update is called once per frame
     void Update()
 	{
-		isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+       
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
 		if (isGrounded && velocity.y < 0)
 		{
@@ -31,18 +33,19 @@ public class playerMovement : MonoBehaviour
 		}
 		if (isMoving == true)
 		{
-			Input();
+		NotInput();
 		}
 		else if (isMoving == false)
 		{
 			return;
 			//stops movement
 		}
+
 	}
 
 	
 
-	private void Input()
+	private void NotInput()
 	{
 		
 

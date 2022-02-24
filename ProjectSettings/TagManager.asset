@@ -8,6 +8,9 @@ TagManager:
   - Door
   - Box
   - Item
+  - bullet
+  - Key
+  - Blob
   layers:
   - Default
   - TransparentFX
