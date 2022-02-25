@@ -22,7 +22,7 @@ public class Door : MonoBehaviour
         keys =
         GameObject.FindGameObjectsWithTag("Key");
 
-        if (keys[0])
+        if (keys[1])
         {
             {
                 OpenDoor();
@@ -36,8 +36,12 @@ public class Door : MonoBehaviour
 
         void OpenDoor()
         {
+        Debug.Log("keyfound");
             chain.SetActive(false);
             anim.SetBool("hasKey", true);
+        KeyFunction key
+        = gameObject.GetComponent<KeyFunction>();
+        key.DestroyKEY();
         }
     }
 

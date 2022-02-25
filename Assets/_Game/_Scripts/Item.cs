@@ -8,8 +8,9 @@ public class Item : MonoBehaviour
     protected Vector3 pos;
     public Camera uiCam;
     public Transform Inventory;
-    float speed = 10f;
+    float speed = 15f;
     public GameObject Key;
+    public ParticleSystem Feedback;
    // public Transform pickup;
     // Start is called before the first frame update
     void Start()
@@ -19,28 +20,27 @@ public class Item : MonoBehaviour
 
     private void Awake()
     {
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Rotate(Vector3.right * Time.deltaTime * speed);
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            //  Destroy(gameObject, 1f);
-            Debug.Log("transfered");
-            Key.transform.parent = Inventory;
-            Key.transform.rotation = Inventory.transform.rotation;
-            Key.transform.position = Inventory.transform.position;
-            this.gameObject.SetActive(false);
-        }
+        
     }
 
-    public void PickedUp()
+    private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("pickedup");
-        //this.transform.position = pickup.position;
-        //this.transform.parent = pickup;
+        if("Player" != null)
+        {
+                Debug.Log("transfered");
+                Key.transform.parent = Inventory;
+                Key.transform.rotation = Inventory.transform.rotation;
+                Key.transform.position = Inventory.transform.position;
+            Feedback.Play();
+            Destroy(gameObject, 1.5f);
+
+        }
     }
 }

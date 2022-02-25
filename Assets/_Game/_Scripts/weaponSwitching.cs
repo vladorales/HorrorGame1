@@ -3,16 +3,19 @@
 public class weaponSwitching : MonoBehaviour
 {
 	public int selectedWeapon = 0;
-
+    public GameObject KeyUI;
 	// Start is called before the first frame update
 	void Start()
 	{
 		SelectWeapon();
-	}
+        UpdateKeys();
+    }
 
 	// Update is called once per frame
 	void Update()
 	{
+       
+
 		int perviousSelectedWeapon = selectedWeapon;
 		GetKeypad();
 		getMouseScroll();
@@ -20,7 +23,21 @@ public class weaponSwitching : MonoBehaviour
 		{
 			SelectWeapon();
 		}
+        
 	}
+
+    public void UpdateKeys()
+    {
+        this.gameObject.transform.Find("PF_Key");
+        if("PF_Key" != null)
+        {
+            KeyUI.SetActive(true);
+        }
+        if("PF_Key" == null)
+        {
+        }
+            
+    }
 
 	private void GetKeypad()
 	{
@@ -70,4 +87,5 @@ public class weaponSwitching : MonoBehaviour
 
 		}
 	}
+
 }

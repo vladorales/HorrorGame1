@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KeyFunction : MonoBehaviour
 {
+    public GameObject[] doors;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,24 +17,9 @@ public class KeyFunction : MonoBehaviour
         
     }
 
-     void OnTriggerEnter(Collider other)
+   public void DestroyKEY()
     {
-        GameObject[] doors;
-        doors =
-       GameObject.FindGameObjectsWithTag("Door");
-        if (doors[0])
-        {
-            {
-                DestroyKEY();
-            }
-        }
-        else
-        {
-            return;
-        }
-
-       void DestroyKEY(){
-            Destroy(gameObject, 1f);
-        }
+        Debug.Log("DestroyingKey");
+        Destroy(gameObject, 1f);
     }
 }
