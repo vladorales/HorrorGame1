@@ -28,14 +28,14 @@ public class weaponSwitching : MonoBehaviour
 
     public void UpdateKeys()
     {
-        this.gameObject.transform.Find("PF_Key");
-        if("PF_Key" != null)
-        {
-            KeyUI.SetActive(true);
-        }
-        if("PF_Key" == null)
-        {
-        }
+        //this.gameObject.transform.Find("PF_Key");
+        //if("PF_Key" != null)
+        //{
+        //    KeyUI.SetActive(true);
+        //}
+        //if("PF_Key" == null)
+        //{
+        //}
             
     }
 

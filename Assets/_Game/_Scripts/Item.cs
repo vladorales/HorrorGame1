@@ -32,7 +32,7 @@ public class Item : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if("Player" != null)
+        if(other.gameObject.tag == "Player")
         {
                 Debug.Log("transfered");
                 Key.transform.parent = Inventory;

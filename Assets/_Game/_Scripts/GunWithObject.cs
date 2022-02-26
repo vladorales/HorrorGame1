@@ -105,8 +105,9 @@ public class GunWithObject : MonoBehaviour
    public IEnumerator Reload()
     {
         Debug.Log("Reload");
+		GunAnim.SetBool("isReloading", true);
         yield return new WaitForSeconds(reloadTime);
-        
+		GunAnim.SetBool("isReloading", false);
         if(currentAmmo != 10)
         {
             maxAmmo = maxAmmo - 10;
