@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class Item : MonoBehaviour
 {
     protected Vector3 pos;
-    public Camera uiCam;
-    public Transform Inventory;
+    
+    
     float speed = 15f;
-    public GameObject Key;
+    
     public ParticleSystem Feedback;
    // public Transform pickup;
     // Start is called before the first frame update
@@ -34,13 +34,9 @@ public class Item : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-                Debug.Log("transfered");
-                Key.transform.parent = Inventory;
-                Key.transform.rotation = Inventory.transform.rotation;
-                Key.transform.position = Inventory.transform.position;
-            Feedback.Play();
-            Destroy(gameObject, 1.5f);
-
+			KeyFunction keyFunc = other.gameObject.GetComponent<KeyFunction>();
+			keyFunc.AddToKey();
+			Destroy(gameObject);
         }
     }
 }

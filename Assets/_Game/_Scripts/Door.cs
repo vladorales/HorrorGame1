@@ -14,34 +14,28 @@ public class Door : MonoBehaviour
         
     }
 
-    void OnTriggerEnter()
-    {
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.gameObject.tag == "Player")
+		{
+			KeyFunction keyFunc = other.gameObject.GetComponent<KeyFunction>();
+			if (keyFunc.numKey == 1)
+			{
+				OpenDoor();
+				keyFunc.MinusKey();
+			}
+		}
 
-        GameObject[] keys;
 
-        keys =
-        GameObject.FindGameObjectsWithTag("Key");
-
-        if (keys[1])
-        {
-            {
-                OpenDoor();
-            }
-        }
-        else
-        {
-            return;
-        }
-        }
+	}
 
         void OpenDoor()
         {
         Debug.Log("keyfound");
             chain.SetActive(false);
             anim.SetBool("hasKey", true);
-        KeyFunction key
-        = gameObject.GetComponent<KeyFunction>();
-        key.DestroyKEY();
+        
+        
         }
     }
 

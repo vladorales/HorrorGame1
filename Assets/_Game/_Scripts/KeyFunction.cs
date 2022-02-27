@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class KeyFunction : MonoBehaviour
 {
-    public GameObject[] doors;
+	public int numKey;
+	public GameObject Key;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,12 +15,23 @@ public class KeyFunction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (numKey >= 1)
+		{
+			Key.SetActive(true);
+		}
+		else if(numKey <=0)
+		{
+			Key.SetActive(false);
+		}
+
     }
 
-   public void DestroyKEY()
+   public void AddToKey()
     {
-        Debug.Log("DestroyingKey");
-        Destroy(gameObject, 1f);
+		numKey++;
     }
+	public void MinusKey()
+	{
+		numKey--;
+	}
 }

@@ -11,6 +11,7 @@ TagManager:
   - bullet
   - Key
   - Blob
+  - PlayerKey
   layers:
   - Default
   - TransparentFX
