@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: ShootingAnimation
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hand
+    second: {fileID: 2100000, guid: cff9a60fc4388a647909f3cb35e89df8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StapleGun1
+    second: {fileID: 2100000, guid: a7250a39217337d478bd36a37b5a6f01, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
