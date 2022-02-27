@@ -6,7 +6,7 @@ public class Door : MonoBehaviour
 {
     public GameObject chain;
     public Animator anim;
-    public GameObject[] keys;
+	public int amountofKeys;
   
     // Update is called once per frame
     void Update()
@@ -19,7 +19,7 @@ public class Door : MonoBehaviour
 		if(other.gameObject.tag == "Player")
 		{
 			KeyFunction keyFunc = other.gameObject.GetComponent<KeyFunction>();
-			if (keyFunc.numKey == 1)
+			if (keyFunc.numKey == amountofKeys)
 			{
 				OpenDoor();
 				keyFunc.MinusKey();

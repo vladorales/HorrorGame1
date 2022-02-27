@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chain: {fileID: 4271324163810560173}
-  anim: {fileID: 0}
-  keys: []
+  anim: {fileID: 3605177480180614758}
+  amountofKeys: 1
 --- !u!95 &3605177480180614758
 Animator:
   serializedVersion: 3

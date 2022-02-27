@@ -1390,6 +1390,11 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1458244196}
+    - target: {fileID: 1654929153593147136, guid: 935914bb955b6e24ea80a6d6c603e312,
+        type: 3}
+      propertyPath: amountofKeys
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1888719760814356635, guid: 935914bb955b6e24ea80a6d6c603e312,
         type: 3}
       propertyPath: m_Name
@@ -6239,11 +6244,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1654929153593147136, guid: 935914bb955b6e24ea80a6d6c603e312,
-        type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 2054702457}
     - target: {fileID: 1888719760814356635, guid: 935914bb955b6e24ea80a6d6c603e312,
         type: 3}
       propertyPath: m_Name
@@ -7445,12 +7445,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &2054702457 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3605177480180614758, guid: 935914bb955b6e24ea80a6d6c603e312,
-    type: 3}
-  m_PrefabInstance: {fileID: 1677742708}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2116374998
 GameObject:
   m_ObjectHideFlags: 0
