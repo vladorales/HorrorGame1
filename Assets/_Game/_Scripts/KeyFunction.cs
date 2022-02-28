@@ -6,6 +6,7 @@ public class KeyFunction : MonoBehaviour
 {
 	public int numKey;
 	public GameObject Key;
+    public GameObject KeyText;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +19,13 @@ public class KeyFunction : MonoBehaviour
         if (numKey >= 1)
 		{
 			Key.SetActive(true);
+            KeyText.SetActive(true);
 		}
 		else if(numKey <=0)
 		{
 			Key.SetActive(false);
-		}
+            KeyText.SetActive(false);
+		} 
 
     }
 

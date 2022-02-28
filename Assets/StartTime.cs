@@ -10,7 +10,12 @@ public class StartTime : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+    }
+
+    // Update is called once per frame 
     void Update()
     {
         

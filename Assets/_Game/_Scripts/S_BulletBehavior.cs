@@ -10,7 +10,7 @@ public class S_BulletBehavior : MonoBehaviour
 	public void OnCollisionEnter(Collision collision)
 	{
 		spark.Play();
-		if (collision.gameObject.tag != "Player" || collision.gameObject.tag != "Blob")
+		if (collision.gameObject.tag != "Player")
 		{
 			var joint = gameObject.AddComponent<FixedJoint>();
 			joint.connectedBody = collision.rigidbody;
@@ -20,7 +20,7 @@ public class S_BulletBehavior : MonoBehaviour
 				Debug.Log("sparking");
 				
 			}
-			Destroy(gameObject, 3f);
+			Destroy(gameObject, 10f);
         
         }
 	}
@@ -35,6 +35,7 @@ public class S_BulletBehavior : MonoBehaviour
 
             Debug.Log("Blob hit");
             bob.Damaged();
+            Destroy(gameObject);
         }
     }
 }

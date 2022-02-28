@@ -15,7 +15,12 @@ public class Blob : MonoBehaviour
     [Header("Other Settings")]
     public Transform player;
     Transform enemyTransform;
-    public GameObject[] Staples;
+    //public GameObject[] Staples;
+   
+    public int Staples;
+    public float rotateSpeed = 50f;
+    public Animator spin;
+    public bool isSpinning = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +38,8 @@ public class Blob : MonoBehaviour
         vibeCheck = Vector3.Distance(self.transform.position, itemCheck.transform.position);
 
         transform.localScale = new Vector3(x + 0.0001f, y + 0.0001f, z + 0.0001f);
+        CheckStaple();
+        ToSpin();
     }
 
      void OnTriggerEnter(Collider other)
@@ -45,14 +52,31 @@ public class Blob : MonoBehaviour
             player.Die();
         }
 
-        if(other.tag == "bullet")
+        if(other.tag == "bullet") 
         {
-            Staples =
-            GameObject.FindGameObjectsWithTag("bullet");
-            if (Staples[5])
-            {
-                Debug.Log("BLOB DEFEATED");
-            }
+
+            Staples++;
+            
+            
+        }
+    }
+
+    public void ToSpin()
+    {
+        if(Staples >= 5)
+        {
+            spin.SetBool("Damaged", true);
+            isSpinning = true;
+        }
+    }
+
+    public void CheckStaple()
+    {
+        if(isSpinning == true)
+        {
+            Staples = Staples - Staples;
+            isSpinning = false;
+            spin.SetBool("Damaged", false);
         }
     }
 
@@ -63,11 +87,11 @@ public class Blob : MonoBehaviour
         float y = this.gameObject.transform.localScale.y;
         float z = this.gameObject.transform.localScale.z;
         //Damaged.Play();
-        transform.localScale = new Vector3(x - 0.2f, y - 0.2f, z - 0.2f);
+        transform.localScale = new Vector3(x - 0.1f, y - 0.1f, z - 0.1f);
 
         if (x < 1)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }
